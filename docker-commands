@@ -1,0 +1,25 @@
+docker images #shows all the images
+docker ps #shows running containers
+docker ps -a #shows all the containers including exitted ones
+docker inspect <container-name> #shows logs about the container
+
+docker container stop <container-name> #stops the container
+docker container stop $(docker container ls -aq) #stops all the containers
+docker rm <container-name> #removes the container
+
+docker container exec -it <container-name> <command> #used to run a command inside the container
+exit #used to exit from exec
+
+docker container run -d <image-name> <command>
+
+docker system df #for disk usage metrics
+docker system df -v #for detailed disk usage metrics
+
+docker logs <container-name> #gives logs
+
+#flags
+-i / --interactive #keeps stdin open
+-t / --tty #used to display tty
+-it #-i and -t combined
+-d #detached mode while running a container
+--restart #restart policy. Values: 'no' 'on_failure' 'unless-stopped' 'always'
